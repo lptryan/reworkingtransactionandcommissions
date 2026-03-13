@@ -149,7 +149,7 @@ const Index = () => {
             <div>
               <h1 className="text-2xl font-bold text-foreground">Transaction & Commission</h1>
               <p className="text-sm text-muted-foreground flex items-center gap-1.5 mt-1">
-                <MapPin className="h-3.5 w-3.5" /> 4 Kelly St, San Antonio, TX 78223
+                <MapPin className="h-3.5 w-3.5" /> 742 Evergreen Terrace, Springfield, IL 62704
               </p>
             </div>
             <div className="flex gap-2">
