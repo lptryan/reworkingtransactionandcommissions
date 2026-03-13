@@ -14,7 +14,7 @@ export function TopNav() {
       <div className="flex items-center justify-between px-4 h-12">
         <div className="flex items-center gap-1">
           <span className="text-nav-foreground font-bold text-lg tracking-tight mr-6">
-            lpt<span className="text-nav-active">connect</span>
+            demo<span className="text-nav-active">CRM</span>
           </span>
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
