@@ -85,11 +85,11 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                 title={collapsed ? s.label : undefined}
                 style={{ fontSize: "0.9rem" }}
                 className={`
-                  w-full text-left rounded-md transition-colors mb-0.5 flex items-center gap-2 font-bold
-                  ${collapsed ? "px-1.5 py-2 justify-center" : "px-2.5 py-2"}
+                  w-full text-left transition-colors mb-0.5 flex items-center gap-2 font-bold
+                  ${collapsed ? "px-1.5 py-2 justify-center rounded-md" : "px-2.5 py-2"}
                   ${isActive
-                    ? "bg-muted text-foreground"
-                    : "text-primary hover:bg-primary hover:text-primary-foreground"
+                    ? "bg-muted text-foreground border-r-[3px] border-r-primary"
+                    : "text-primary hover:bg-primary hover:text-primary-foreground rounded-md"
                   }
                 `}
               >
