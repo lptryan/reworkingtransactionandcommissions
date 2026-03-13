@@ -85,7 +85,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                   ${collapsed ? "px-1.5 py-2 justify-center" : "px-2.5 py-2"}
                   ${isActive
                     ? "bg-primary text-primary-foreground font-semibold"
-                    : "text-foreground hover:bg-muted"
+                    : "text-primary hover:bg-muted"
                   }
                 `}
               >
