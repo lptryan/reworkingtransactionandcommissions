@@ -309,7 +309,7 @@ const Index = () => {
         <TransactionSection
           id="notes"
           title="Notes"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-primary/80"><Plus className="h-3.5 w-3.5" /> Add Note</Button>}
+          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Add Note</Button>}
         >
           <Card>
             <CardContent className="p-4 space-y-4">
