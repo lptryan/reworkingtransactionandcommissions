@@ -30,6 +30,8 @@ const statusConfig = {
 };
 
 export function DocumentsSection() {
+  const [selectedDoc, setSelectedDoc] = useState<Document | null>(null);
+
   const filterFn = useCallback(
     (doc: Document, q: string) =>
       doc.name.toLowerCase().includes(q) ||
@@ -59,7 +61,11 @@ export function DocumentsSection() {
             paginated.map((doc, i) => {
               const cfg = statusConfig[doc.status];
               return (
-                <div key={i} className="flex items-center justify-between py-3 border-b border-border last:border-0">
+                <div
+                  key={i}
+                  onClick={() => setSelectedDoc(doc)}
+                  className="flex items-center justify-between py-3 border-b border-border last:border-0 cursor-pointer hover:bg-muted/50 rounded px-2 -mx-2 transition-colors"
+                >
                   <div className="flex items-center gap-3">
                     <FileText className="h-4 w-4 text-muted-foreground" />
                     <span className="text-sm font-medium text-foreground">{doc.name}</span>
@@ -76,6 +82,47 @@ export function DocumentsSection() {
           )}
         </CardContent>
       </Card>
+
+      <Dialog open={!!selectedDoc} onOpenChange={(open) => !open && setSelectedDoc(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <FileText className="h-5 w-5 text-primary" />
+              {selectedDoc?.name}
+            </DialogTitle>
+            <DialogDescription>Document details and download</DialogDescription>
+          </DialogHeader>
+          {selectedDoc && (() => {
+            const cfg = statusConfig[selectedDoc.status];
+            return (
+              <div className="space-y-4 py-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">Status</span>
+                  <span className={`inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full ${cfg.color}`}>
+                    <cfg.icon className="h-3 w-3" /> {cfg.label}
+                  </span>
+                </div>
+                {selectedDoc.date && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Date</span>
+                    <span className="text-sm text-foreground">{selectedDoc.date}</span>
+                  </div>
+                )}
+                <div className="rounded-lg border border-border bg-muted/50 p-8 flex flex-col items-center justify-center gap-2">
+                  <FileText className="h-12 w-12 text-muted-foreground/50" />
+                  <p className="text-xs text-muted-foreground">Document preview not available</p>
+                </div>
+              </div>
+            );
+          })()}
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setSelectedDoc(null)}>Close</Button>
+            <Button className="gap-2">
+              <Download className="h-4 w-4" /> Download
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
