@@ -207,8 +207,8 @@ const Index = () => {
           action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> New Client</Button>}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <PersonCard name="Rafael Hernandez III" role="Buyer" email="rafael@email.com" phone="(555) 234-5678" />
-            <PersonCard name="Kenneth Pruski ETAL" role="Seller" email="kenneth@email.com" phone="(555) 345-6789" />
+            <PersonCard name="James Whitfield" role="Buyer" email="james.whitfield@email.com" phone="(555) 234-5678" />
+            <PersonCard name="Susan Blackwell" role="Seller" email="susan.b@email.com" phone="(555) 345-6789" />
           </div>
         </TransactionSection>
 
