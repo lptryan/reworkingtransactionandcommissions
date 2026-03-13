@@ -112,9 +112,6 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
             </>
           ) : (
             <>
-              <Button size="sm" className="w-full justify-start gap-1.5 animate-pulse-blue text-primary-foreground text-xs">
-                <ClipboardList className="h-3.5 w-3.5" /> Intake Wizard
-              </Button>
               <Button size="sm" className="w-full justify-start gap-1.5 bg-status-approved text-primary-foreground hover:bg-status-approved/90 text-xs">
                 <CheckCircle className="h-3.5 w-3.5" /> Confirm Closed
               </Button>
