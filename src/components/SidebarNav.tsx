@@ -19,14 +19,16 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
 
   return (
     <>
-      {/* Mobile toggle */}
-      <button
-        onClick={() => setCollapsed((c) => !c)}
-        className="fixed top-14 left-2 z-50 lg:hidden h-8 w-8 rounded-md bg-card border border-border shadow flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-        aria-label="Toggle sidebar"
-      >
-        {collapsed ? <PanelLeft className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
-      </button>
+      {/* Mobile toggle - own row below TopNav */}
+      <div className="fixed top-12 left-0 right-0 z-50 lg:hidden h-10 bg-card border-b border-border flex items-center px-2">
+        <button
+          onClick={() => setCollapsed((c) => !c)}
+          className="h-8 w-8 rounded-md bg-card border border-border shadow flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Toggle sidebar"
+        >
+          {collapsed ? <PanelLeft className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
+        </button>
+      </div>
 
       {/* Overlay for mobile when open */}
       {!collapsed && (
@@ -39,7 +41,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
       {/* Sidebar */}
       <aside
         className={`
-          fixed top-12 left-0 z-40 h-[calc(100vh-3rem)] bg-card border-r border-border
+          fixed top-[5.5rem] lg:top-12 left-0 z-40 h-[calc(100vh-5.5rem)] lg:h-[calc(100vh-3rem)] bg-card border-r border-border
           flex flex-col transition-all duration-200 ease-in-out
           ${collapsed ? "-translate-x-full lg:translate-x-0 lg:w-12" : "translate-x-0 w-56"}
         `}

@@ -195,7 +195,7 @@ const Index = () => {
       <TopNav />
       <SidebarNav sections={sections} activeSection={activeSection} onSectionClick={scrollTo} onCollapsedChange={handleCollapsedChange} />
 
-      <main className={`mx-auto px-4 py-6 transition-all duration-200 ${sidebarCollapsed ? "lg:ml-12 max-w-6xl" : "lg:ml-56 max-w-5xl"}`}>
+      <main className={`mx-auto px-4 py-6 transition-all duration-200 mt-10 lg:mt-0 ${sidebarCollapsed ? "lg:ml-12 max-w-6xl" : "lg:ml-56 max-w-5xl"}`}>
         {/* Page Header */}
         <div className="mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
