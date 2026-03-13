@@ -9,7 +9,26 @@ import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Mail, FileText, CheckCircle, Clock, AlertCircle, Plus, ChevronRight, LayoutDashboard, DollarSign, ClipboardCheck, Users, Handshake, ArrowDownToLine, ArrowUpFromLine, BookOpen, StickyNote } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  FileText,
+  CheckCircle,
+  Clock,
+  AlertCircle,
+  Plus,
+  ChevronRight,
+  LayoutDashboard,
+  DollarSign,
+  ClipboardCheck,
+  Users,
+  Handshake,
+  ArrowDownToLine,
+  ArrowUpFromLine,
+  BookOpen,
+  StickyNote,
+} from "lucide-react";
 
 const sections: Section[] = [
   { id: "overview", label: "Overview", icon: LayoutDashboard },
@@ -24,16 +43,30 @@ const sections: Section[] = [
   { id: "notes", label: "Notes", icon: StickyNote },
 ];
 
-function StatCard({ label, value, sub, status }: { label: string; value: string; sub?: string; status?: "pending" | "approved" }) {
+function StatCard({
+  label,
+  value,
+  sub,
+  status,
+}: {
+  label: string;
+  value: string;
+  sub?: string;
+  status?: "pending" | "approved";
+}) {
   return (
     <div className="bg-card rounded-lg border border-border p-4">
       <p className="text-xs text-muted-foreground mb-1">{label}</p>
       <p className="text-xl font-bold text-foreground">{value}</p>
       {sub && <p className="text-xs text-muted-foreground mt-1">{sub}</p>}
       {status && (
-        <span className={`inline-flex items-center gap-1 mt-2 text-xs font-medium px-2 py-0.5 rounded-full ${
-          status === "approved" ? "bg-status-approved/10 text-status-approved" : "bg-status-pending/10 text-status-pending"
-        }`}>
+        <span
+          className={`inline-flex items-center gap-1 mt-2 text-xs font-medium px-2 py-0.5 rounded-full ${
+            status === "approved"
+              ? "bg-status-approved/10 text-status-approved"
+              : "bg-status-pending/10 text-status-pending"
+          }`}
+        >
           {status === "approved" ? <CheckCircle className="h-3 w-3" /> : <Clock className="h-3 w-3" />}
           {status === "approved" ? "Approved" : "Pending"}
         </span>
@@ -56,12 +89,18 @@ function PersonCard({ name, role, email, phone }: { name: string; role?: string;
         {(email || phone) && (
           <div className="mt-3 space-y-1">
             {email && (
-              <a href={`mailto:${email}`} className="text-xs text-primary underline flex items-center gap-1.5 hover:text-primary/80">
+              <a
+                href={`mailto:${email}`}
+                className="text-xs text-primary underline flex items-center gap-1.5 hover:text-primary/80"
+              >
                 <Mail className="h-3 w-3" /> {email}
               </a>
             )}
             {phone && (
-              <a href={`tel:${phone}`} className="text-xs text-primary underline flex items-center gap-1.5 hover:text-primary/80">
+              <a
+                href={`tel:${phone}`}
+                className="text-xs text-primary underline flex items-center gap-1.5 hover:text-primary/80"
+              >
                 <Phone className="h-3 w-3" /> {phone}
               </a>
             )}
@@ -72,7 +111,15 @@ function PersonCard({ name, role, email, phone }: { name: string; role?: string;
   );
 }
 
-function DocumentRow({ name, status, date }: { name: string; status: "received" | "pending" | "missing"; date?: string }) {
+function DocumentRow({
+  name,
+  status,
+  date,
+}: {
+  name: string;
+  status: "received" | "pending" | "missing";
+  date?: string;
+}) {
   const statusConfig = {
     received: { color: "bg-status-approved/10 text-status-approved", icon: CheckCircle, label: "Received" },
     pending: { color: "bg-status-pending/10 text-status-pending", icon: Clock, label: "Pending" },
@@ -123,7 +170,10 @@ function PayableTable({ title, rows }: { title: string; rows: { desc: string; de
                 <td className="py-2 font-semibold text-foreground">Total</td>
                 <td></td>
                 <td className="py-2 text-right font-bold text-primary">
-                  ${rows.reduce((s, r) => s + parseFloat(r.amount.replace(/[,$]/g, "")), 0).toLocaleString("en-US", { minimumFractionDigits: 2 })}
+                  $
+                  {rows
+                    .reduce((s, r) => s + parseFloat(r.amount.replace(/[,$]/g, "")), 0)
+                    .toLocaleString("en-US", { minimumFractionDigits: 2 })}
                 </td>
               </tr>
             </tfoot>
@@ -149,12 +199,16 @@ const Index = () => {
             <div>
               <h1 className="text-2xl font-bold text-foreground">Transaction & Commission</h1>
               <p className="text-sm text-muted-foreground flex items-center gap-1.5 mt-1">
-                <MapPin className="h-3.5 w-3.5" /> 742 Evergreen Terrace, Springfield, IL 62704
+                <MapPin className="h-3.5 w-3.5" /> 742 Evergreen Terrace, Springfield, IL 90210
               </p>
             </div>
             <div className="flex gap-2">
-              <Badge variant="outline" className="bg-status-pending/10 text-status-pending border-status-pending/20">Pending</Badge>
-              <Badge variant="outline" className="bg-status-info/10 text-status-info border-status-info/20">In Progress</Badge>
+              <Badge variant="outline" className="bg-status-pending/10 text-status-pending border-status-pending/20">
+                Pending
+              </Badge>
+              <Badge variant="outline" className="bg-status-info/10 text-status-info border-status-info/20">
+                In Progress
+              </Badge>
             </div>
           </div>
         </div>
@@ -195,7 +249,11 @@ const Index = () => {
         <TransactionSection
           id="documents"
           title="Documents"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Upload</Button>}
+          action={
+            <Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]">
+              <Plus className="h-3.5 w-3.5" /> Upload
+            </Button>
+          }
         >
           <DocumentsSection />
         </TransactionSection>
@@ -204,7 +262,11 @@ const Index = () => {
         <TransactionSection
           id="clients"
           title="Clients"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> New Client</Button>}
+          action={
+            <Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]">
+              <Plus className="h-3.5 w-3.5" /> New Client
+            </Button>
+          }
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <PersonCard name="James Whitfield" role="Buyer" email="james.whitfield@email.com" phone="(555) 234-5678" />
@@ -216,11 +278,20 @@ const Index = () => {
         <TransactionSection
           id="parties"
           title="Parties"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Add Party</Button>}
+          action={
+            <Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]">
+              <Plus className="h-3.5 w-3.5" /> Add Party
+            </Button>
+          }
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <PersonCard name="Pinnacle Realty Group" role="Listing Brokerage" email="info@pinnaclerealty.com" />
-            <PersonCard name="Amanda Torres" role="Listing Agent" email="amanda@pinnaclerealty.com" phone="(555) 456-7890" />
+            <PersonCard
+              name="Amanda Torres"
+              role="Listing Agent"
+              email="amanda@pinnaclerealty.com"
+              phone="(555) 456-7890"
+            />
             <PersonCard name="Derek Chang" role="Transaction Coordinator" email="derek.chang@email.com" />
             <PersonCard name="Patricia Owens" role="Seller's Attorney" email="powens@lawfirm.com" />
             <PersonCard name="Summit Realty" role="Cooperating Brokerage" email="info@summitrealty.com" />
@@ -285,11 +356,17 @@ const Index = () => {
         <TransactionSection
           id="trade-record"
           title="Trade Record"
-          action={<Button size="sm" className="gap-1 bg-status-approved text-primary-foreground hover:bg-status-approved/90">Ready to Submit Trade Record</Button>}
+          action={
+            <Button size="sm" className="gap-1 bg-status-approved text-primary-foreground hover:bg-status-approved/90">
+              Ready to Submit Trade Record
+            </Button>
+          }
         >
           <Card>
             <CardContent className="p-4">
-              <p className="text-sm text-muted-foreground">No trade record has been submitted yet. Complete all required fields and documents before submitting.</p>
+              <p className="text-sm text-muted-foreground">
+                No trade record has been submitted yet. Complete all required fields and documents before submitting.
+              </p>
               <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div className="text-center p-3 rounded-lg bg-muted">
                   <p className="text-2xl font-bold text-foreground">12</p>
@@ -316,18 +393,50 @@ const Index = () => {
         <TransactionSection
           id="notes"
           title="Notes"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Add Note</Button>}
+          action={
+            <Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]">
+              <Plus className="h-3.5 w-3.5" /> Add Note
+            </Button>
+          }
         >
           <Card>
             <CardContent className="p-4 space-y-4">
               {[
-                { date: "03/13/2026", author: "Brian Kepler", text: "Buyer requested a second walkthrough before closing. Scheduled for 03/14 at 2pm." },
-                { date: "03/12/2026", author: "Amanda Torres", text: "Spoke with buyer's agent regarding inspection timeline. Agreed to extend by 5 days." },
-                { date: "03/11/2026", author: "Patricia Owens", text: "Reviewed title commitment — found minor lien from 2019 utility bill. Seller working to resolve before closing." },
-                { date: "03/10/2026", author: "Derek Chang", text: "Title commitment received from Horizon Title. Forwarded to all parties for review." },
-                { date: "03/08/2026", author: "Amanda Torres", text: "HOA resale certificate requested from Evergreen HOA. Expected turnaround 5-7 business days." },
-                { date: "03/05/2026", author: "Amanda Torres", text: "Property showing completed. Buyer expressed strong interest. Awaiting formal offer." },
-                { date: "03/01/2026", author: "Derek Chang", text: "Earnest money deposited and confirmed. Receipt uploaded to documents." },
+                {
+                  date: "03/13/2026",
+                  author: "Brian Kepler",
+                  text: "Buyer requested a second walkthrough before closing. Scheduled for 03/14 at 2pm.",
+                },
+                {
+                  date: "03/12/2026",
+                  author: "Amanda Torres",
+                  text: "Spoke with buyer's agent regarding inspection timeline. Agreed to extend by 5 days.",
+                },
+                {
+                  date: "03/11/2026",
+                  author: "Patricia Owens",
+                  text: "Reviewed title commitment — found minor lien from 2019 utility bill. Seller working to resolve before closing.",
+                },
+                {
+                  date: "03/10/2026",
+                  author: "Derek Chang",
+                  text: "Title commitment received from Horizon Title. Forwarded to all parties for review.",
+                },
+                {
+                  date: "03/08/2026",
+                  author: "Amanda Torres",
+                  text: "HOA resale certificate requested from Evergreen HOA. Expected turnaround 5-7 business days.",
+                },
+                {
+                  date: "03/05/2026",
+                  author: "Amanda Torres",
+                  text: "Property showing completed. Buyer expressed strong interest. Awaiting formal offer.",
+                },
+                {
+                  date: "03/01/2026",
+                  author: "Derek Chang",
+                  text: "Earnest money deposited and confirmed. Receipt uploaded to documents.",
+                },
               ].map((note, i) => (
                 <div key={i} className={`${i > 0 ? "border-t border-border pt-4" : ""}`}>
                   <div className="flex items-center gap-2 mb-1">
@@ -343,8 +452,6 @@ const Index = () => {
 
         <div className="h-20" />
       </main>
-
-      
     </div>
   );
 };
