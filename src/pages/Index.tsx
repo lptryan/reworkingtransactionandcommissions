@@ -169,7 +169,7 @@ function PayableTable({ title, rows }: { title: string; rows: { desc: string; de
               <tr className="bg-primary/5">
                 <td className="py-2 font-semibold text-foreground">Total</td>
                 <td></td>
-                <td className="py-2 text-right font-bold text-primary">
+                <td className="py-2 text-right font-bold text-foreground">
                   $
                   {rows
                     .reduce((s, r) => s + parseFloat(r.amount.replace(/[,$]/g, "")), 0)
@@ -318,7 +318,7 @@ const Index = () => {
               </div>
               <div className="flex items-center justify-between py-3">
                 <span className="text-sm text-muted-foreground">Total Receivables</span>
-                <span className="text-sm font-bold text-primary">$14,700.00</span>
+                <span className="text-sm font-bold text-foreground">$14,700.00</span>
               </div>
             </CardContent>
           </Card>
