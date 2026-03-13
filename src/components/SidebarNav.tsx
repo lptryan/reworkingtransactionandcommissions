@@ -83,12 +83,13 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                   if (window.innerWidth < 1024) setCollapsed(true);
                 }}
                 title={collapsed ? s.label : undefined}
+                style={{ fontSize: "0.9rem" }}
                 className={`
-                  w-full text-left text-xs rounded-md transition-colors mb-0.5 flex items-center gap-2
+                  w-full text-left rounded-md transition-colors mb-0.5 flex items-center gap-2 font-bold
                   ${collapsed ? "px-1.5 py-2 justify-center" : "px-2.5 py-2"}
                   ${isActive
-                    ? "bg-primary text-primary-foreground font-semibold"
-                    : "text-primary hover:bg-muted"
+                    ? "bg-muted text-foreground"
+                    : "text-primary hover:bg-primary hover:text-primary-foreground"
                   }
                 `}
               >
