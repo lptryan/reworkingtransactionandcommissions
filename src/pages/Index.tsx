@@ -141,9 +141,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <TopNav />
-      <SectionNav sections={sections} activeSection={activeSection} onSectionClick={scrollTo} />
+      <SidebarNav sections={sections} activeSection={activeSection} onSectionClick={scrollTo} />
 
-      <main className="max-w-5xl mx-auto px-4 py-6">
+      <main className="lg:ml-56 max-w-5xl mx-auto px-4 py-6 transition-all duration-200">
         {/* Page Header */}
         <div className="mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
