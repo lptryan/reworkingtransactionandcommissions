@@ -292,15 +292,15 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">No trade record has been submitted yet. Complete all required fields and documents before submitting.</p>
               <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div className="text-center p-3 rounded-lg bg-muted">
-                  <p className="text-2xl font-bold text-foreground">6</p>
+                  <p className="text-2xl font-bold text-foreground">12</p>
                   <p className="text-xs text-muted-foreground">Documents</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-muted">
-                  <p className="text-2xl font-bold text-status-approved">2</p>
+                  <p className="text-2xl font-bold text-status-approved">6</p>
                   <p className="text-xs text-muted-foreground">Received</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-muted">
-                  <p className="text-2xl font-bold text-status-pending">2</p>
+                  <p className="text-2xl font-bold text-status-pending">4</p>
                   <p className="text-xs text-muted-foreground">Pending</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-muted">
