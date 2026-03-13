@@ -165,16 +165,16 @@ const Index = () => {
         {/* Overview */}
         <TransactionSection id="overview" title="Overview">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            <StatCard label="List Price" value="$125,000.00" status="pending" />
-            <StatCard label="Contract Price" value="$80,000.00" status="approved" />
-            <StatCard label="Commission" value="$2,400.00" sub="3% of contract price" />
-            <StatCard label="Close Date" value="03/12/2026" sub="Estimated" />
+            <StatCard label="List Price" value="$325,000.00" status="pending" />
+            <StatCard label="Contract Price" value="$310,000.00" status="approved" />
+            <StatCard label="Commission" value="$9,300.00" sub="3% of contract price" />
+            <StatCard label="Close Date" value="04/15/2026" sub="Estimated" />
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
-            <StatCard label="Company Split" value="$572.00" />
-            <StatCard label="Agent Split" value="$0.00" />
-            <StatCard label="Listing Date" value="01/11/2026" />
-            <StatCard label="Expiration" value="03/12/2026" />
+            <StatCard label="Company Split" value="$2,325.00" />
+            <StatCard label="Agent Split" value="$6,975.00" />
+            <StatCard label="Listing Date" value="02/01/2026" />
+            <StatCard label="Expiration" value="05/01/2026" />
           </div>
         </TransactionSection>
 
