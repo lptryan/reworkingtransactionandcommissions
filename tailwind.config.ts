@@ -61,6 +61,8 @@ export default {
           pending: "hsl(var(--status-pending))",
           approved: "hsl(var(--status-approved))",
           info: "hsl(var(--status-info))",
+          warning: "hsl(var(--status-warning))",
+          due: "hsl(var(--status-due))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
