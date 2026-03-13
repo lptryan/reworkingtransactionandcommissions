@@ -53,6 +53,48 @@ const conditions: Condition[] = [
     createdBy: "System Auto", createdAt: "03/06/26 12:41",
     tags: [{ label: "Pre-Compliance", color: "gold" }, { label: "Required", color: "red" }],
   },
+  {
+    description: "Lead Paint Disclosure (Pre-1978 Property)",
+    submittedDate: "03/11/26 14:22", submittedBy: "Amanda Torres",
+    clearedDate: "03/11/26 15:00", clearedBy: "Derek Chang",
+    createdBy: "Amanda Torres", createdAt: "03/07/26 09:15",
+    tags: [{ label: "Post-Compliance", color: "gold" }, { label: "Required", color: "red" }],
+  },
+  {
+    description: "Buyer's Proof of Funds or Pre-Approval Letter",
+    submittedDate: "", submittedBy: "",
+    clearedDate: "", clearedBy: "",
+    createdBy: "System Auto", createdAt: "03/06/26 12:42",
+    tags: [{ label: "Pre-Compliance", color: "gold" }, { label: "Required", color: "red" }],
+  },
+  {
+    description: "HOA Documents and Resale Certificate",
+    submittedDate: "03/10/26 11:30", submittedBy: "Derek Chang",
+    clearedDate: "", clearedBy: "",
+    createdBy: "Derek Chang", createdAt: "03/08/26 08:00",
+    tags: [{ label: "Post-Compliance", color: "gold" }, { label: "If Applicable", color: "green" }],
+  },
+  {
+    description: "Survey or Plat Map",
+    submittedDate: "", submittedBy: "",
+    clearedDate: "", clearedBy: "",
+    createdBy: "Amanda Torres", createdAt: "03/08/26 08:05",
+    tags: [{ label: "Post-Compliance", color: "gold" }, { label: "If Applicable", color: "green" }],
+  },
+  {
+    description: "Termite / Wood-Destroying Insect Inspection",
+    submittedDate: "03/11/26 16:45", submittedBy: "Brian Kepler",
+    clearedDate: "03/12/26 09:00", clearedBy: "Rachel Simmons",
+    createdBy: "System Auto", createdAt: "03/06/26 12:43",
+    tags: [{ label: "Pre-Compliance", color: "gold" }, { label: "Required", color: "red" }],
+  },
+  {
+    description: "MLS Data Accuracy Verification",
+    submittedDate: "03/08/26 13:10", submittedBy: "Amanda Torres",
+    clearedDate: "03/08/26 13:10", clearedBy: "Amanda Torres",
+    createdBy: "Amanda Torres", createdAt: "03/07/26 10:00",
+    tags: [{ label: "Pre-Compliance", color: "gold" }, { label: "If Applicable", color: "green" }],
+  },
 ];
 
 const tagColors = {

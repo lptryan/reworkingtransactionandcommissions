@@ -321,9 +321,13 @@ const Index = () => {
           <Card>
             <CardContent className="p-4 space-y-4">
               {[
+                { date: "03/13/2026", author: "Brian Kepler", text: "Buyer requested a second walkthrough before closing. Scheduled for 03/14 at 2pm." },
                 { date: "03/12/2026", author: "Amanda Torres", text: "Spoke with buyer's agent regarding inspection timeline. Agreed to extend by 5 days." },
-                { date: "03/10/2026", author: "Derek Chang", text: "Title commitment received from Horizon Title. Reviewing for any issues." },
+                { date: "03/11/2026", author: "Patricia Owens", text: "Reviewed title commitment — found minor lien from 2019 utility bill. Seller working to resolve before closing." },
+                { date: "03/10/2026", author: "Derek Chang", text: "Title commitment received from Horizon Title. Forwarded to all parties for review." },
+                { date: "03/08/2026", author: "Amanda Torres", text: "HOA resale certificate requested from Evergreen HOA. Expected turnaround 5-7 business days." },
                 { date: "03/05/2026", author: "Amanda Torres", text: "Property showing completed. Buyer expressed strong interest. Awaiting formal offer." },
+                { date: "03/01/2026", author: "Derek Chang", text: "Earnest money deposited and confirmed. Receipt uploaded to documents." },
               ].map((note, i) => (
                 <div key={i} className={`${i > 0 ? "border-t border-border pt-4" : ""}`}>
                   <div className="flex items-center gap-2 mb-1">
