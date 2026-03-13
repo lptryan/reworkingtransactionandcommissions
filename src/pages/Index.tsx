@@ -169,7 +169,7 @@ function PayableTable({ title, rows }: { title: string; rows: { desc: string; de
               <tr className="bg-primary/5">
                 <td className="py-2 font-semibold text-foreground">Total</td>
                 <td></td>
-                <td className="py-2 text-right font-bold text-primary">
+                <td className="py-2 text-right font-bold text-foreground">
                   $
                   {rows
                     .reduce((s, r) => s + parseFloat(r.amount.replace(/[,$]/g, "")), 0)
