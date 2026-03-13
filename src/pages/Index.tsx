@@ -1,6 +1,10 @@
 import { TopNav } from "@/components/TopNav";
 import { SectionNav } from "@/components/SectionNav";
 import { TransactionSection } from "@/components/TransactionSection";
+import { TransactionStatus } from "@/components/TransactionStatus";
+import { CommissionWidget, RevShareWidget } from "@/components/CommissionWidget";
+import { ConditionsSection } from "@/components/ConditionsSection";
+import { FloatingActions } from "@/components/FloatingActions";
 import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,6 +13,8 @@ import { MapPin, Phone, Mail, FileText, CheckCircle, Clock, AlertCircle, Plus, C
 
 const sections: Section[] = [
   { id: "overview", label: "Overview" },
+  { id: "commission", label: "Commission" },
+  { id: "conditions", label: "Conditions" },
   { id: "documents", label: "Documents" },
   { id: "clients", label: "Clients" },
   { id: "parties", label: "Parties" },
@@ -153,6 +159,9 @@ const Index = () => {
           </div>
         </div>
 
+        {/* Transaction Status Banner */}
+        <TransactionStatus />
+
         {/* Overview */}
         <TransactionSection id="overview" title="Overview">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -167,6 +176,19 @@ const Index = () => {
             <StatCard label="Listing Date" value="01/11/2026" />
             <StatCard label="Expiration" value="03/12/2026" />
           </div>
+        </TransactionSection>
+
+        {/* Commission & Rev Share */}
+        <TransactionSection id="commission" title="Commission & Rev Share">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <CommissionWidget />
+            <RevShareWidget />
+          </div>
+        </TransactionSection>
+
+        {/* Conditions */}
+        <TransactionSection id="conditions" title="Conditions">
+          <ConditionsSection />
         </TransactionSection>
 
         {/* Documents */}
@@ -318,6 +340,8 @@ const Index = () => {
 
         <div className="h-20" />
       </main>
+
+      <FloatingActions />
     </div>
   );
 };
