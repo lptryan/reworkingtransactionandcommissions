@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle, XCircle, ClipboardList, PanelLeftClose, PanelLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Section } from "@/hooks/use-section-tracker";
@@ -7,10 +7,15 @@ interface SidebarNavProps {
   sections: Section[];
   activeSection: string;
   onSectionClick: (id: string) => void;
+  onCollapsedChange?: (collapsed: boolean) => void;
 }
 
-export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarNavProps) {
+export function SidebarNav({ sections, activeSection, onSectionClick, onCollapsedChange }: SidebarNavProps) {
   const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    onCollapsedChange?.(collapsed);
+  }, [collapsed, onCollapsedChange]);
 
   return (
     <>
