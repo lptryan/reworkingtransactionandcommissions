@@ -19,11 +19,11 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
 
   return (
     <>
-      {/* Mobile toggle - own row below TopNav */}
-      <div className="fixed top-12 left-0 right-0 z-50 lg:hidden h-10 bg-card border-b border-border flex items-center px-2">
+      {/* Mobile toggle - own row below TopNav, themed to match nav */}
+      <div className="fixed top-12 left-0 right-0 z-50 lg:hidden h-10 bg-nav border-b border-border flex items-center px-2">
         <button
           onClick={() => setCollapsed((c) => !c)}
-          className="h-8 w-8 rounded-md bg-card border border-border shadow flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+          className="h-8 w-8 rounded-md bg-nav-active/20 border border-nav-active/30 flex items-center justify-center text-nav-foreground hover:bg-nav-active/40 transition-colors"
           aria-label="Toggle sidebar"
         >
           {collapsed ? <PanelLeft className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
@@ -60,9 +60,12 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
         {/* Intake Wizard */}
         <div className={`border-b border-border p-2 ${collapsed ? "flex flex-col items-center" : "flex flex-col items-center"}`}>
           {collapsed ? (
-            <button title="Intake Wizard" className="h-8 w-8 rounded-md animate-pulse-blue text-primary-foreground flex items-center justify-center">
-              <ClipboardList className="h-4 w-4" />
-            </button>
+            <div className="group relative">
+              <button className="h-8 w-8 rounded-md animate-pulse-blue text-primary-foreground flex items-center justify-center">
+                <ClipboardList className="h-4 w-4" />
+              </button>
+              <span className="sidebar-tooltip group-hover:scale-100">Intake Wizard</span>
+            </div>
           ) : (
             <div className="w-[95%]">
               <p className="text-[10px] font-bold text-destructive uppercase tracking-wide mb-1 px-1">Do this first!</p>
@@ -82,18 +85,38 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
           )}
           {sections.map((s) => {
             const isActive = activeSection === s.id;
-            return (
+            return collapsed ? (
+              <div key={s.id} className="group relative">
+                <button
+                  onClick={() => {
+                    onSectionClick(s.id);
+                    if (window.innerWidth < 1024) setCollapsed(true);
+                  }}
+                  style={{ fontSize: "0.9rem" }}
+                  className={`
+                    w-full text-left transition-all duration-200 flex items-center gap-2 font-bold
+                    px-1.5 py-2 justify-center
+                    ${isActive
+                      ? "bg-muted text-foreground border-r-[3px] border-r-primary"
+                      : "text-primary hover:bg-primary hover:text-primary-foreground"
+                    }
+                  `}
+                >
+                  {s.icon && <s.icon className="h-3.5 w-3.5 shrink-0" />}
+                </button>
+                <span className="sidebar-tooltip group-hover:scale-100">{s.label}</span>
+              </div>
+            ) : (
               <button
                 key={s.id}
                 onClick={() => {
                   onSectionClick(s.id);
                   if (window.innerWidth < 1024) setCollapsed(true);
                 }}
-                title={collapsed ? s.label : undefined}
                 style={{ fontSize: "0.9rem" }}
                 className={`
                   w-full text-left transition-all duration-200 flex items-center gap-2 font-bold
-                  ${collapsed ? "px-1.5 py-2 justify-center" : "px-3 py-2"}
+                  px-3 py-2
                   ${isActive
                     ? "bg-muted text-foreground border-r-[3px] border-r-primary"
                     : "text-primary hover:bg-primary hover:text-primary-foreground"
@@ -101,7 +124,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
                 `}
               >
                 {s.icon && <s.icon className="h-3.5 w-3.5 shrink-0" />}
-                {!collapsed && <span>{s.label}</span>}
+                <span>{s.label}</span>
               </button>
             );
           })}
@@ -109,12 +132,18 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
           <div className="mt-2 pt-2 px-1 mx-auto w-[95%]" style={{ boxShadow: "inset 0 2px 4px -2px hsl(var(--border)), inset 0 -2px 4px -2px hsl(var(--border))" }}>
             {collapsed ? (
               <div className="flex flex-col items-center gap-1.5 py-1">
-                <button title="Confirm Closed" className="h-8 w-8 rounded-md bg-status-approved text-primary-foreground flex items-center justify-center hover:bg-status-approved/90">
-                  <CheckCircle className="h-4 w-4" />
-                </button>
-                <button title="Did Not Close" className="h-8 w-8 rounded-md border border-destructive text-destructive flex items-center justify-center hover:bg-destructive hover:text-primary-foreground">
-                  <XCircle className="h-4 w-4" />
-                </button>
+                <div className="group relative">
+                  <button className="h-8 w-8 rounded-md bg-status-approved text-primary-foreground flex items-center justify-center hover:bg-status-approved/90">
+                    <CheckCircle className="h-4 w-4" />
+                  </button>
+                  <span className="sidebar-tooltip group-hover:scale-100">Confirm Closed</span>
+                </div>
+                <div className="group relative">
+                  <button className="h-8 w-8 rounded-md border border-destructive text-destructive flex items-center justify-center hover:bg-destructive hover:text-primary-foreground">
+                    <XCircle className="h-4 w-4" />
+                  </button>
+                  <span className="sidebar-tooltip group-hover:scale-100">Did Not Close</span>
+                </div>
               </div>
             ) : (
               <div className="flex flex-col gap-1.5 py-1">
