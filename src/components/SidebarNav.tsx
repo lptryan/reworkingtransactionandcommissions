@@ -85,7 +85,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                 title={collapsed ? s.label : undefined}
                 style={{ fontSize: "0.9rem" }}
                 className={`
-                  w-full text-left transition-colors flex items-center gap-2 font-bold
+                  w-full text-left transition-all duration-200 flex items-center gap-2 font-bold
                   ${collapsed ? "px-1.5 py-2 justify-center" : "px-3 py-2"}
                   ${isActive
                     ? "bg-muted text-foreground border-r-[3px] border-r-primary"
