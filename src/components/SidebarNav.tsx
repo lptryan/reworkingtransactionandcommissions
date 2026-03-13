@@ -99,9 +99,9 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
             );
           })}
           {/* Divider + action buttons */}
-          <div className="border-t border-border mt-2 pt-2 mx-1">
+          <div className="mt-2 pt-2 px-1 mx-auto w-[95%]" style={{ boxShadow: "inset 0 2px 4px -2px hsl(var(--border)), inset 0 -2px 4px -2px hsl(var(--border))" }}>
             {collapsed ? (
-              <div className="flex flex-col items-center gap-1.5">
+              <div className="flex flex-col items-center gap-1.5 py-1">
                 <button title="Confirm Closed" className="h-8 w-8 rounded-md bg-status-approved text-primary-foreground flex items-center justify-center hover:bg-status-approved/90">
                   <CheckCircle className="h-4 w-4" />
                 </button>
@@ -110,7 +110,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                 </button>
               </div>
             ) : (
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-1.5 py-1">
                 <Button size="sm" className="w-full justify-start gap-1.5 bg-status-approved text-primary-foreground hover:bg-status-approved/90 text-xs">
                   <CheckCircle className="h-3.5 w-3.5" /> Confirm Closed
                 </Button>
