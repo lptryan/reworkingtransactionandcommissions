@@ -248,27 +248,27 @@ const Index = () => {
         {/* Payables */}
         <TransactionSection id="payables" title="Payables">
           <PayableTable
-            title="Commission Payable to Maria Neill"
+            title="Commission Payable to Amanda Torres"
             rows={[
-              { desc: "Agent commission - Maria Neill", deduction: "", amount: "1,200.00" },
-              { desc: "E&O Insurance (quarterly)", deduction: "$65.00", amount: "1,135.00" },
-              { desc: "Tech Fee - Transaction Mgmt", deduction: "$49.00", amount: "1,086.00" },
+              { desc: "Agent commission - Amanda Torres", deduction: "", amount: "4,650.00" },
+              { desc: "E&O Insurance (quarterly)", deduction: "$65.00", amount: "4,585.00" },
+              { desc: "Tech Fee - Transaction Mgmt", deduction: "$49.00", amount: "4,536.00" },
             ]}
           />
           <PayableTable
-            title="Commission Payable to Robert Moats"
+            title="Commission Payable to Brian Kepler"
             rows={[
-              { desc: "Agent commission - Robert Moats", deduction: "", amount: "600.00" },
-              { desc: "E&O Insurance (quarterly)", deduction: "$32.50", amount: "567.50" },
+              { desc: "Agent commission - Brian Kepler", deduction: "", amount: "2,325.00" },
+              { desc: "E&O Insurance (quarterly)", deduction: "$32.50", amount: "2,292.50" },
             ]}
           />
           <PayableTable
-            title="Commission Payable to David Lewis"
+            title="Commission Payable to Derek Chang"
             rows={[
-              { desc: "Agent commission - David Lewis", deduction: "", amount: "600.00" },
-              { desc: "E&O Insurance (quarterly)", deduction: "$32.50", amount: "567.50" },
-              { desc: "Desk fee - Office Suite", deduction: "$175.00", amount: "392.50" },
-              { desc: "Marketing fund contribution", deduction: "$50.00", amount: "342.50" },
+              { desc: "Agent commission - Derek Chang", deduction: "", amount: "1,162.50" },
+              { desc: "E&O Insurance (quarterly)", deduction: "$32.50", amount: "1,130.00" },
+              { desc: "Desk fee - Office Suite", deduction: "$175.00", amount: "955.00" },
+              { desc: "Marketing fund contribution", deduction: "$50.00", amount: "905.00" },
             ]}
           />
         </TransactionSection>
