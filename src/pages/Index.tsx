@@ -318,7 +318,7 @@ const Index = () => {
               </div>
               <div className="flex items-center justify-between py-3">
                 <span className="text-sm text-muted-foreground">Total Receivables</span>
-                <span className="text-sm font-bold text-primary">$14,700.00</span>
+                <span className="text-sm font-bold text-foreground">$14,700.00</span>
               </div>
             </CardContent>
           </Card>
