@@ -187,13 +187,15 @@ function PayableTable({ title, rows }: { title: string; rows: { desc: string; de
 
 const Index = () => {
   const { activeSection, scrollTo } = useSectionTracker(sections);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const handleCollapsedChange = useCallback((c: boolean) => setSidebarCollapsed(c), []);
 
   return (
     <div className="min-h-screen bg-background">
       <TopNav />
-      <SidebarNav sections={sections} activeSection={activeSection} onSectionClick={scrollTo} />
+      <SidebarNav sections={sections} activeSection={activeSection} onSectionClick={scrollTo} onCollapsedChange={handleCollapsedChange} />
 
-      <main className="lg:ml-56 max-w-5xl mx-auto px-4 py-6 transition-all duration-200">
+      <main className={`mx-auto px-4 py-6 transition-all duration-200 ${sidebarCollapsed ? "lg:ml-12 max-w-6xl" : "lg:ml-56 max-w-5xl"}`}>
         {/* Page Header */}
         <div className="mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
