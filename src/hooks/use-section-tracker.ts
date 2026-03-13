@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import type { LucideIcon } from "lucide-react";
 
 export interface Section {
   id: string;
   label: string;
+  icon?: LucideIcon;
 }
 
 export function useSectionTracker(sections: Section[]) {

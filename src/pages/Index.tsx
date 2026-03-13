@@ -9,19 +9,19 @@ import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Mail, FileText, CheckCircle, Clock, AlertCircle, Plus, ChevronRight } from "lucide-react";
+import { MapPin, Phone, Mail, FileText, CheckCircle, Clock, AlertCircle, Plus, ChevronRight, LayoutDashboard, DollarSign, ClipboardCheck, Users, Handshake, ArrowDownToLine, ArrowUpFromLine, BookOpen, StickyNote } from "lucide-react";
 
 const sections: Section[] = [
-  { id: "overview", label: "Overview" },
-  { id: "commission", label: "Commission" },
-  { id: "conditions", label: "Conditions" },
-  { id: "documents", label: "Documents" },
-  { id: "clients", label: "Clients" },
-  { id: "parties", label: "Parties" },
-  { id: "receivables", label: "Receivables" },
-  { id: "payables", label: "Payables" },
-  { id: "trade-record", label: "Trade Record" },
-  { id: "notes", label: "Notes" },
+  { id: "overview", label: "Overview", icon: LayoutDashboard },
+  { id: "commission", label: "Commission", icon: DollarSign },
+  { id: "conditions", label: "Conditions", icon: ClipboardCheck },
+  { id: "documents", label: "Documents", icon: FileText },
+  { id: "clients", label: "Clients", icon: Users },
+  { id: "parties", label: "Parties", icon: Handshake },
+  { id: "receivables", label: "Receivables", icon: ArrowDownToLine },
+  { id: "payables", label: "Payables", icon: ArrowUpFromLine },
+  { id: "trade-record", label: "Trade Record", icon: BookOpen },
+  { id: "notes", label: "Notes", icon: StickyNote },
 ];
 
 function StatCard({ label, value, sub, status }: { label: string; value: string; sub?: string; status?: "pending" | "approved" }) {
