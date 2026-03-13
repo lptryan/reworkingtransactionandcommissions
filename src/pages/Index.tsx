@@ -234,12 +234,12 @@ const Index = () => {
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center justify-between py-3 border-b border-border">
-                <span className="text-sm text-foreground">LPT Realty Commission Receivable</span>
-                <span className="text-sm font-bold text-foreground">$2,400.00</span>
+                <span className="text-sm text-foreground">Pinnacle Realty Commission Receivable</span>
+                <span className="text-sm font-bold text-foreground">$9,300.00</span>
               </div>
               <div className="flex items-center justify-between py-3">
                 <span className="text-sm text-muted-foreground">Total Receivables</span>
-                <span className="text-sm font-bold text-primary">$2,400.00</span>
+                <span className="text-sm font-bold text-primary">$9,300.00</span>
               </div>
             </CardContent>
           </Card>
