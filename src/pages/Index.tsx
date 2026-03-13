@@ -1,11 +1,10 @@
 import { TopNav } from "@/components/TopNav";
-import { SectionNav } from "@/components/SectionNav";
+import { SidebarNav } from "@/components/SidebarNav";
 import { TransactionSection } from "@/components/TransactionSection";
 import { TransactionStatus } from "@/components/TransactionStatus";
 import { CommissionWidget, RevShareWidget } from "@/components/CommissionWidget";
 import { ConditionsSection } from "@/components/ConditionsSection";
 import { DocumentsSection } from "@/components/DocumentsSection";
-import { FloatingActions } from "@/components/FloatingActions";
 import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -141,9 +140,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <TopNav />
-      <SectionNav sections={sections} activeSection={activeSection} onSectionClick={scrollTo} />
+      <SidebarNav sections={sections} activeSection={activeSection} onSectionClick={scrollTo} />
 
-      <main className="max-w-5xl mx-auto px-4 py-6">
+      <main className="lg:ml-56 max-w-5xl mx-auto px-4 py-6 transition-all duration-200">
         {/* Page Header */}
         <div className="mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -333,7 +332,7 @@ const Index = () => {
         <div className="h-20" />
       </main>
 
-      <FloatingActions sections={sections} activeSection={activeSection} onSectionClick={scrollTo} />
+      
     </div>
   );
 };
