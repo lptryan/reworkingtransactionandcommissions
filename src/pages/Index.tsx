@@ -1,8 +1,8 @@
+import { useState, useCallback } from "react";
 import { TopNav } from "@/components/TopNav";
 import { SidebarNav } from "@/components/SidebarNav";
 import { TransactionSection } from "@/components/TransactionSection";
 import { TransactionStatus } from "@/components/TransactionStatus";
-import { CommissionWidget, RevShareWidget } from "@/components/CommissionWidget";
 import { ConditionsSection } from "@/components/ConditionsSection";
 import { DocumentsSection } from "@/components/DocumentsSection";
 import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
