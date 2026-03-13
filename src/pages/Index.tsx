@@ -217,7 +217,7 @@ const Index = () => {
         <TransactionSection
           id="parties"
           title="Parties"
-          action={<Button size="sm" variant="outline" className="gap-1"><Plus className="h-3.5 w-3.5" /> Add Party</Button>}
+          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-primary/80"><Plus className="h-3.5 w-3.5" /> Add Party</Button>}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <PersonCard name="LPT Realty" role="Listing Brokerage" email="info@lptrealty.com" />
