@@ -81,19 +81,16 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                 }}
                 title={collapsed ? s.label : undefined}
                 className={`
-                  w-full text-left text-xs rounded-md transition-colors mb-0.5
-                  ${collapsed ? "px-1.5 py-2 flex items-center justify-center" : "px-2.5 py-2"}
+                  w-full text-left text-xs rounded-md transition-colors mb-0.5 flex items-center gap-2
+                  ${collapsed ? "px-1.5 py-2 justify-center" : "px-2.5 py-2"}
                   ${isActive
                     ? "bg-primary text-primary-foreground font-semibold"
                     : "text-foreground hover:bg-muted"
                   }
                 `}
               >
-                {collapsed ? (
-                  <span className="font-bold text-[10px]">{s.label.charAt(0)}</span>
-                ) : (
-                  s.label
-                )}
+                {s.icon && <s.icon className="h-3.5 w-3.5 shrink-0" />}
+                {!collapsed && <span>{s.label}</span>}
               </button>
             );
           })}
