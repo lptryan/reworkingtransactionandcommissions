@@ -4,6 +4,7 @@ import { TransactionSection } from "@/components/TransactionSection";
 import { TransactionStatus } from "@/components/TransactionStatus";
 import { CommissionWidget, RevShareWidget } from "@/components/CommissionWidget";
 import { ConditionsSection } from "@/components/ConditionsSection";
+import { DocumentsSection } from "@/components/DocumentsSection";
 import { FloatingActions } from "@/components/FloatingActions";
 import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
 import { Badge } from "@/components/ui/badge";
