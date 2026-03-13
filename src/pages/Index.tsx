@@ -313,9 +313,9 @@ const Index = () => {
           <Card>
             <CardContent className="p-4 space-y-4">
               {[
-                { date: "03/12/2026", author: "Maria Neill", text: "Spoke with buyer's agent regarding inspection timeline. Agreed to extend by 5 days." },
-                { date: "03/10/2026", author: "Shar Collar", text: "Title commitment received from Midnight Title. Reviewing for any issues." },
-                { date: "03/05/2026", author: "Maria Neill", text: "Property showing completed. Buyer expressed strong interest. Awaiting formal offer." },
+                { date: "03/12/2026", author: "Amanda Torres", text: "Spoke with buyer's agent regarding inspection timeline. Agreed to extend by 5 days." },
+                { date: "03/10/2026", author: "Derek Chang", text: "Title commitment received from Horizon Title. Reviewing for any issues." },
+                { date: "03/05/2026", author: "Amanda Torres", text: "Property showing completed. Buyer expressed strong interest. Awaiting formal offer." },
               ].map((note, i) => (
                 <div key={i} className={`${i > 0 ? "border-t border-border pt-4" : ""}`}>
                   <div className="flex items-center gap-2 mb-1">

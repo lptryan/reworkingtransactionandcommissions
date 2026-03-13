@@ -22,7 +22,7 @@ export function CommissionWidget() {
           <CommissionStat label="Commission Amount" value="$9,300.00" />
         </div>
         <div className="border-t border-border grid grid-cols-2 divide-x divide-border">
-          <CommissionStat label="Brokerage Commission" value="$572.00" />
+          <CommissionStat label="Brokerage Commission" value="$2,325.00" />
           <CommissionStat label="Check Payment Amount" value="$0.00" />
         </div>
         <div className="border-t border-border grid grid-cols-2 divide-x divide-border">
