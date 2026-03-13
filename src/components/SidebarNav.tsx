@@ -51,18 +51,18 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
         </div>
 
         {/* Intake Wizard */}
-        <div className={`border-b border-border p-2 ${collapsed ? "flex flex-col items-center" : ""}`}>
+        <div className={`border-b border-border p-2 ${collapsed ? "flex flex-col items-center" : "flex flex-col items-center"}`}>
           {collapsed ? (
             <button title="Intake Wizard" className="h-8 w-8 rounded-md animate-pulse-blue text-primary-foreground flex items-center justify-center">
               <ClipboardList className="h-4 w-4" />
             </button>
           ) : (
-            <>
+            <div className="w-[95%]">
               <p className="text-[10px] font-bold text-destructive uppercase tracking-wide mb-1 px-1">Do this first!</p>
               <Button size="sm" className="w-full justify-start gap-1.5 animate-pulse-blue text-primary-foreground text-xs">
                 <ClipboardList className="h-3.5 w-3.5" /> Intake Wizard
               </Button>
-            </>
+            </div>
           )}
         </div>
 
@@ -85,7 +85,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                 title={collapsed ? s.label : undefined}
                 style={{ fontSize: "0.9rem" }}
                 className={`
-                  w-full text-left transition-colors flex items-center gap-2 font-bold
+                  w-full text-left transition-all duration-200 flex items-center gap-2 font-bold
                   ${collapsed ? "px-1.5 py-2 justify-center" : "px-3 py-2"}
                   ${isActive
                     ? "bg-muted text-foreground border-r-[3px] border-r-primary"
@@ -99,9 +99,9 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
             );
           })}
           {/* Divider + action buttons */}
-          <div className="border-t border-border mt-2 pt-2 mx-1">
+          <div className="mt-2 pt-2 px-1 mx-auto w-[95%]" style={{ boxShadow: "inset 0 2px 4px -2px hsl(var(--border)), inset 0 -2px 4px -2px hsl(var(--border))" }}>
             {collapsed ? (
-              <div className="flex flex-col items-center gap-1.5">
+              <div className="flex flex-col items-center gap-1.5 py-1">
                 <button title="Confirm Closed" className="h-8 w-8 rounded-md bg-status-approved text-primary-foreground flex items-center justify-center hover:bg-status-approved/90">
                   <CheckCircle className="h-4 w-4" />
                 </button>
@@ -110,7 +110,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                 </button>
               </div>
             ) : (
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-1.5 py-1">
                 <Button size="sm" className="w-full justify-start gap-1.5 bg-status-approved text-primary-foreground hover:bg-status-approved/90 text-xs">
                   <CheckCircle className="h-3.5 w-3.5" /> Confirm Closed
                 </Button>
