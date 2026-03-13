@@ -333,7 +333,7 @@ const Index = () => {
         <div className="h-20" />
       </main>
 
-      <FloatingActions sections={sections} activeSection={activeSection} onSectionClick={scrollTo} />
+      
     </div>
   );
 };
