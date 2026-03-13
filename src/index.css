@@ -120,3 +120,16 @@ All colors MUST be HSL.
     display: none;
   }
 }
+
+@keyframes pulse-blue {
+  0%, 100% {
+    background-color: hsl(211, 70%, 35%);
+  }
+  50% {
+    background-color: hsl(211, 70%, 25%);
+  }
+}
+
+.animate-pulse-blue {
+  animation: pulse-blue 2s ease-in-out infinite;
+}
