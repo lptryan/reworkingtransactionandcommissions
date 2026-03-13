@@ -48,6 +48,8 @@ All colors MUST be HSL.
     --status-pending: 38 92% 50%;
     --status-approved: 142 72% 40%;
     --status-info: 211 70% 45%;
+    --status-warning: 0 72% 51%;
+    --status-due: 25 95% 53%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
