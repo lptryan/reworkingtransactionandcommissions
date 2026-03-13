@@ -121,6 +121,37 @@ All colors MUST be HSL.
   }
 }
 
+/* Sidebar word-bubble tooltip */
+.sidebar-tooltip {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  transform-origin: left center;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: hsl(var(--nav-bg));
+  color: hsl(var(--nav-foreground));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  transition: transform 0.15s ease;
+  z-index: 100;
+}
+
+.sidebar-tooltip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 5px 5px 0;
+  border-style: solid;
+  border-color: transparent hsl(var(--nav-bg)) transparent transparent;
+}
+
 @keyframes pulse-blue {
   0%, 100% {
     background-color: hsl(211, 70%, 35%);
