@@ -196,7 +196,7 @@ const Index = () => {
         <TransactionSection
           id="documents"
           title="Documents"
-          action={<Button size="sm" variant="outline" className="gap-1"><Plus className="h-3.5 w-3.5" /> Upload</Button>}
+          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-primary/80"><Plus className="h-3.5 w-3.5" /> Upload</Button>}
         >
           <DocumentsSection />
         </TransactionSection>
