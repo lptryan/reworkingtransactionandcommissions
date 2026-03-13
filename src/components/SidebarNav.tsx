@@ -97,7 +97,7 @@ export function SidebarNav({ sections, activeSection, onSectionClick, onCollapse
                     w-full text-left transition-all duration-200 flex items-center gap-2 font-bold
                     px-1.5 py-2 justify-center
                     ${isActive
-                      ? "bg-muted text-foreground border-r-[3px] border-r-primary"
+                      ? "bg-muted text-foreground border-r-[3px] border-r-primary shadow-[inset_0_3px_6px_-2px_rgba(0,0,0,0.15),inset_0_-2px_4px_-2px_rgba(0,0,0,0.08)]"
                       : "text-primary hover:bg-primary hover:text-primary-foreground"
                     }
                   `}
