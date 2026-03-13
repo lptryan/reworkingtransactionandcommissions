@@ -237,9 +237,17 @@ const Index = () => {
                 <span className="text-sm text-foreground">Pinnacle Realty Commission Receivable</span>
                 <span className="text-sm font-bold text-foreground">$9,300.00</span>
               </div>
+              <div className="flex items-center justify-between py-3 border-b border-border">
+                <span className="text-sm text-foreground">Referral Fee - Coastal Partners Group</span>
+                <span className="text-sm font-bold text-foreground">$750.00</span>
+              </div>
+              <div className="flex items-center justify-between py-3 border-b border-border">
+                <span className="text-sm text-foreground">Buyer Broker Compensation</span>
+                <span className="text-sm font-bold text-foreground">$4,650.00</span>
+              </div>
               <div className="flex items-center justify-between py-3">
                 <span className="text-sm text-muted-foreground">Total Receivables</span>
-                <span className="text-sm font-bold text-primary">$9,300.00</span>
+                <span className="text-sm font-bold text-primary">$14,700.00</span>
               </div>
             </CardContent>
           </Card>
