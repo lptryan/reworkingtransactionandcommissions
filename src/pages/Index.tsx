@@ -196,7 +196,7 @@ const Index = () => {
         <TransactionSection
           id="documents"
           title="Documents"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-primary/80"><Plus className="h-3.5 w-3.5" /> Upload</Button>}
+          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Upload</Button>}
         >
           <DocumentsSection />
         </TransactionSection>
@@ -205,7 +205,7 @@ const Index = () => {
         <TransactionSection
           id="clients"
           title="Clients"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-primary/80"><Plus className="h-3.5 w-3.5" /> New Client</Button>}
+          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> New Client</Button>}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <PersonCard name="Rafael Hernandez III" role="Buyer" email="rafael@email.com" phone="(555) 234-5678" />
@@ -217,7 +217,7 @@ const Index = () => {
         <TransactionSection
           id="parties"
           title="Parties"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-primary/80"><Plus className="h-3.5 w-3.5" /> Add Party</Button>}
+          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Add Party</Button>}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <PersonCard name="LPT Realty" role="Listing Brokerage" email="info@lptrealty.com" />
@@ -309,7 +309,7 @@ const Index = () => {
         <TransactionSection
           id="notes"
           title="Notes"
-          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-primary/80"><Plus className="h-3.5 w-3.5" /> Add Note</Button>}
+          action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Add Note</Button>}
         >
           <Card>
             <CardContent className="p-4 space-y-4">
