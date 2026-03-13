@@ -17,10 +17,16 @@ interface Document {
 const documents: Document[] = [
   { name: "Purchase Agreement", status: "received", date: "02/15/2026" },
   { name: "Property Disclosure", status: "received", date: "02/18/2026" },
+  { name: "Buyer's Pre-Approval Letter", status: "received", date: "02/20/2026" },
+  { name: "Earnest Money Receipt", status: "received", date: "02/22/2026" },
   { name: "Inspection Report", status: "pending", date: "03/01/2026" },
   { name: "Title Commitment", status: "pending" },
+  { name: "HOA Resale Certificate", status: "pending" },
+  { name: "Survey / Plat Map", status: "pending" },
   { name: "Appraisal Report", status: "missing" },
-  { name: "Closing Statement", status: "missing" },
+  { name: "Closing Statement (HUD-1)", status: "missing" },
+  { name: "Lead Paint Disclosure", status: "received", date: "03/11/2026" },
+  { name: "Wire Fraud Acknowledgment", status: "received", date: "03/09/2026" },
 ];
 
 const statusConfig = {

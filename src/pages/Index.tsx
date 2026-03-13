@@ -237,9 +237,17 @@ const Index = () => {
                 <span className="text-sm text-foreground">Pinnacle Realty Commission Receivable</span>
                 <span className="text-sm font-bold text-foreground">$9,300.00</span>
               </div>
+              <div className="flex items-center justify-between py-3 border-b border-border">
+                <span className="text-sm text-foreground">Referral Fee - Coastal Partners Group</span>
+                <span className="text-sm font-bold text-foreground">$750.00</span>
+              </div>
+              <div className="flex items-center justify-between py-3 border-b border-border">
+                <span className="text-sm text-foreground">Buyer Broker Compensation</span>
+                <span className="text-sm font-bold text-foreground">$4,650.00</span>
+              </div>
               <div className="flex items-center justify-between py-3">
                 <span className="text-sm text-muted-foreground">Total Receivables</span>
-                <span className="text-sm font-bold text-primary">$9,300.00</span>
+                <span className="text-sm font-bold text-primary">$14,700.00</span>
               </div>
             </CardContent>
           </Card>
@@ -284,15 +292,15 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">No trade record has been submitted yet. Complete all required fields and documents before submitting.</p>
               <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div className="text-center p-3 rounded-lg bg-muted">
-                  <p className="text-2xl font-bold text-foreground">6</p>
+                  <p className="text-2xl font-bold text-foreground">12</p>
                   <p className="text-xs text-muted-foreground">Documents</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-muted">
-                  <p className="text-2xl font-bold text-status-approved">2</p>
+                  <p className="text-2xl font-bold text-status-approved">6</p>
                   <p className="text-xs text-muted-foreground">Received</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-muted">
-                  <p className="text-2xl font-bold text-status-pending">2</p>
+                  <p className="text-2xl font-bold text-status-pending">4</p>
                   <p className="text-xs text-muted-foreground">Pending</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-muted">
@@ -313,9 +321,13 @@ const Index = () => {
           <Card>
             <CardContent className="p-4 space-y-4">
               {[
+                { date: "03/13/2026", author: "Brian Kepler", text: "Buyer requested a second walkthrough before closing. Scheduled for 03/14 at 2pm." },
                 { date: "03/12/2026", author: "Amanda Torres", text: "Spoke with buyer's agent regarding inspection timeline. Agreed to extend by 5 days." },
-                { date: "03/10/2026", author: "Derek Chang", text: "Title commitment received from Horizon Title. Reviewing for any issues." },
+                { date: "03/11/2026", author: "Patricia Owens", text: "Reviewed title commitment — found minor lien from 2019 utility bill. Seller working to resolve before closing." },
+                { date: "03/10/2026", author: "Derek Chang", text: "Title commitment received from Horizon Title. Forwarded to all parties for review." },
+                { date: "03/08/2026", author: "Amanda Torres", text: "HOA resale certificate requested from Evergreen HOA. Expected turnaround 5-7 business days." },
                 { date: "03/05/2026", author: "Amanda Torres", text: "Property showing completed. Buyer expressed strong interest. Awaiting formal offer." },
+                { date: "03/01/2026", author: "Derek Chang", text: "Earnest money deposited and confirmed. Receipt uploaded to documents." },
               ].map((note, i) => (
                 <div key={i} className={`${i > 0 ? "border-t border-border pt-4" : ""}`}>
                   <div className="flex items-center gap-2 mb-1">
