@@ -51,18 +51,18 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
         </div>
 
         {/* Intake Wizard */}
-        <div className={`border-b border-border p-2 ${collapsed ? "flex flex-col items-center" : ""}`}>
+        <div className={`border-b border-border p-2 ${collapsed ? "flex flex-col items-center" : "flex flex-col items-center"}`}>
           {collapsed ? (
             <button title="Intake Wizard" className="h-8 w-8 rounded-md animate-pulse-blue text-primary-foreground flex items-center justify-center">
               <ClipboardList className="h-4 w-4" />
             </button>
           ) : (
-            <>
+            <div className="w-[95%]">
               <p className="text-[10px] font-bold text-destructive uppercase tracking-wide mb-1 px-1">Do this first!</p>
               <Button size="sm" className="w-full justify-start gap-1.5 animate-pulse-blue text-primary-foreground text-xs">
                 <ClipboardList className="h-3.5 w-3.5" /> Intake Wizard
               </Button>
-            </>
+            </div>
           )}
         </div>
 
