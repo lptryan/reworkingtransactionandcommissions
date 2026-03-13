@@ -6,7 +6,6 @@ import { CommissionWidget, RevShareWidget } from "@/components/CommissionWidget"
 import { ConditionsSection } from "@/components/ConditionsSection";
 import { DocumentsSection } from "@/components/DocumentsSection";
 import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
-import { useSectionTracker, type Section } from "@/hooks/use-section-tracker";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
