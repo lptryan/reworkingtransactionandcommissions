@@ -1,4 +1,5 @@
 import { Home, Users, FileText, Calendar, Settings, Bell, Search, User } from "lucide-react";
+import logo from "@/assets/logo.webp";
 
 const navItems = [
   { icon: Home, label: "Home" },
@@ -13,9 +14,7 @@ export function TopNav() {
     <header className="sticky top-0 z-50 bg-nav border-b border-nav-active/20">
       <div className="flex items-center justify-between px-4 h-12">
         <div className="flex items-center gap-1">
-          <span className="text-nav-foreground font-bold text-lg tracking-tight mr-6">
-            demo<span className="text-nav-active">CRM</span>
-          </span>
+          <img src={logo} alt="Logo" className="h-8 w-auto mr-4" />
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <button
