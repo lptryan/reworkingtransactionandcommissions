@@ -198,16 +198,7 @@ const Index = () => {
           title="Documents"
           action={<Button size="sm" variant="outline" className="gap-1"><Plus className="h-3.5 w-3.5" /> Upload</Button>}
         >
-          <Card>
-            <CardContent className="p-4">
-              <DocumentRow name="Purchase Agreement" status="received" date="02/15/2026" />
-              <DocumentRow name="Property Disclosure" status="received" date="02/18/2026" />
-              <DocumentRow name="Inspection Report" status="pending" date="03/01/2026" />
-              <DocumentRow name="Title Commitment" status="pending" />
-              <DocumentRow name="Appraisal Report" status="missing" />
-              <DocumentRow name="Closing Statement" status="missing" />
-            </CardContent>
-          </Card>
+          <DocumentsSection />
         </TransactionSection>
 
         {/* Clients */}
