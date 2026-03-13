@@ -57,14 +57,14 @@ function PersonCard({ name, role, email, phone }: { name: string; role?: string;
         {(email || phone) && (
           <div className="mt-3 space-y-1">
             {email && (
-              <p className="text-xs text-muted-foreground flex items-center gap-1.5">
+              <a href={`mailto:${email}`} className="text-xs text-primary underline flex items-center gap-1.5 hover:text-primary/80">
                 <Mail className="h-3 w-3" /> {email}
-              </p>
+              </a>
             )}
             {phone && (
-              <p className="text-xs text-muted-foreground flex items-center gap-1.5">
+              <a href={`tel:${phone}`} className="text-xs text-primary underline flex items-center gap-1.5 hover:text-primary/80">
                 <Phone className="h-3 w-3" /> {phone}
-              </p>
+              </a>
             )}
           </div>
         )}
