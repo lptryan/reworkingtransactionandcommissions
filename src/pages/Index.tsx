@@ -219,13 +219,13 @@ const Index = () => {
           action={<Button size="sm" className="gap-1 bg-primary text-primary-foreground hover:bg-[hsl(211,70%,25%)]"><Plus className="h-3.5 w-3.5" /> Add Party</Button>}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <PersonCard name="LPT Realty" role="Listing Brokerage" email="info@lptrealty.com" />
-            <PersonCard name="Maria Neill" role="Listing Agent" email="maria@lptrealty.com" phone="(555) 456-7890" />
-            <PersonCard name="Shar Collar" role="Transaction Coordinator" email="shar@email.com" />
-            <PersonCard name="Kenneth Pruski" role="Seller's Attorney" email="kpruski@law.com" />
-            <PersonCard name="Ryse Realty" role="Cooperating Brokerage" email="info@ryserealty.com" />
-            <PersonCard name="Gina Neill" role="Buyer's Agent" email="gina@ryserealty.com" />
-            <PersonCard name="Midnight Title - Lisa Azar" role="Title Company" email="lisa@midnighttitle.com" />
+            <PersonCard name="Pinnacle Realty Group" role="Listing Brokerage" email="info@pinnaclerealty.com" />
+            <PersonCard name="Amanda Torres" role="Listing Agent" email="amanda@pinnaclerealty.com" phone="(555) 456-7890" />
+            <PersonCard name="Derek Chang" role="Transaction Coordinator" email="derek.chang@email.com" />
+            <PersonCard name="Patricia Owens" role="Seller's Attorney" email="powens@lawfirm.com" />
+            <PersonCard name="Summit Realty" role="Cooperating Brokerage" email="info@summitrealty.com" />
+            <PersonCard name="Brian Kepler" role="Buyer's Agent" email="brian@summitrealty.com" />
+            <PersonCard name="Horizon Title - Nicole Voss" role="Title Company" email="nicole@horizontitle.com" />
           </div>
         </TransactionSection>
 
