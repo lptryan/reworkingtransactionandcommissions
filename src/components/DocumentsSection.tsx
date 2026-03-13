@@ -1,6 +1,10 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { FileText, CheckCircle, Clock, AlertCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter,
+} from "@/components/ui/dialog";
+import { FileText, CheckCircle, Clock, AlertCircle, Download } from "lucide-react";
 import { useSearchPagination } from "@/hooks/use-search-pagination";
 import { SearchPaginationBar } from "@/components/SearchPaginationBar";
 
