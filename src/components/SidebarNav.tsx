@@ -97,30 +97,29 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
               </button>
             );
           })}
+          {/* Divider + action buttons */}
+          <div className="border-t border-border mt-2 pt-2 mx-1">
+            {collapsed ? (
+              <div className="flex flex-col items-center gap-1.5">
+                <button title="Confirm Closed" className="h-8 w-8 rounded-md bg-status-approved text-primary-foreground flex items-center justify-center hover:bg-status-approved/90">
+                  <CheckCircle className="h-4 w-4" />
+                </button>
+                <button title="Did Not Close" className="h-8 w-8 rounded-md border border-destructive text-destructive flex items-center justify-center hover:bg-destructive hover:text-primary-foreground">
+                  <XCircle className="h-4 w-4" />
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-1.5">
+                <Button size="sm" className="w-full justify-start gap-1.5 bg-status-approved text-primary-foreground hover:bg-status-approved/90 text-xs">
+                  <CheckCircle className="h-3.5 w-3.5" /> Confirm Closed
+                </Button>
+                <Button size="sm" variant="outline" className="w-full justify-start gap-1.5 border-destructive text-destructive hover:bg-destructive hover:text-primary-foreground text-xs">
+                  <XCircle className="h-3.5 w-3.5" /> Did Not Close
+                </Button>
+              </div>
+            )}
+          </div>
         </nav>
-
-        {/* Action buttons */}
-        <div className={`border-t border-border p-2 flex flex-col gap-1.5 ${collapsed ? "items-center" : ""}`}>
-          {collapsed ? (
-            <>
-              <button title="Confirm Closed" className="h-8 w-8 rounded-md bg-status-approved text-primary-foreground flex items-center justify-center hover:bg-status-approved/90">
-                <CheckCircle className="h-4 w-4" />
-              </button>
-              <button title="Did Not Close" className="h-8 w-8 rounded-md border border-destructive text-destructive flex items-center justify-center hover:bg-destructive hover:text-primary-foreground">
-                <XCircle className="h-4 w-4" />
-              </button>
-            </>
-          ) : (
-            <>
-              <Button size="sm" className="w-full justify-start gap-1.5 bg-status-approved text-primary-foreground hover:bg-status-approved/90 text-xs">
-                <CheckCircle className="h-3.5 w-3.5" /> Confirm Closed
-              </Button>
-              <Button size="sm" variant="outline" className="w-full justify-start gap-1.5 border-destructive text-destructive hover:bg-destructive hover:text-primary-foreground text-xs">
-                <XCircle className="h-3.5 w-3.5" /> Did Not Close
-              </Button>
-            </>
-          )}
-        </div>
       </aside>
     </>
   );
