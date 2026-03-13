@@ -50,6 +50,19 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
           </button>
         </div>
 
+        {/* Intake Wizard */}
+        <div className={`border-b border-border p-2 ${collapsed ? "flex justify-center" : ""}`}>
+          {collapsed ? (
+            <button title="Intake Wizard" className="h-8 w-8 rounded-md animate-pulse-blue text-primary-foreground flex items-center justify-center">
+              <ClipboardList className="h-4 w-4" />
+            </button>
+          ) : (
+            <Button size="sm" className="w-full justify-start gap-1.5 animate-pulse-blue text-primary-foreground text-xs">
+              <ClipboardList className="h-3.5 w-3.5" /> Intake Wizard
+            </Button>
+          )}
+        </div>
+
         {/* Section navigation */}
         <nav className="flex-1 overflow-y-auto py-2 px-1.5">
           {!collapsed && (
@@ -64,7 +77,6 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
                 key={s.id}
                 onClick={() => {
                   onSectionClick(s.id);
-                  // Auto-close on mobile
                   if (window.innerWidth < 1024) setCollapsed(true);
                 }}
                 title={collapsed ? s.label : undefined}
@@ -91,9 +103,6 @@ export function SidebarNav({ sections, activeSection, onSectionClick }: SidebarN
         <div className={`border-t border-border p-2 flex flex-col gap-1.5 ${collapsed ? "items-center" : ""}`}>
           {collapsed ? (
             <>
-              <button title="Intake Wizard" className="h-8 w-8 rounded-md animate-pulse-blue text-primary-foreground flex items-center justify-center">
-                <ClipboardList className="h-4 w-4" />
-              </button>
               <button title="Confirm Closed" className="h-8 w-8 rounded-md bg-status-approved text-primary-foreground flex items-center justify-center hover:bg-status-approved/90">
                 <CheckCircle className="h-4 w-4" />
               </button>
